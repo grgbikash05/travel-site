@@ -22,4 +22,25 @@
             font-size: 3.875rem;
         }
     }
+
+    &--no-padding-until-medium {
+        padding-left: 0;
+        padding-right: 0;
+
+        @include respond(atMedium) {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+    }
+
+    &--no-padding-until-large {
+        padding-left: 0;
+        padding-right: 0;
+
+        @include respond(atLarge) {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+    }
+
 }

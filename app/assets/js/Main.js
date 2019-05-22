@@ -95,46 +95,46 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_Person__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/Person */ "./app/assets/js/modules/Person.js");
-var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/MobileMenu */ "./app/assets/js/modules/MobileMenu.js");
 
-
-
-class Adult extends _modules_Person__WEBPACK_IMPORTED_MODULE_0__["default"] {
-  payTaxes() {
-    console.log(this.name + " now owes $0 in taxes.");
-  }
-
-}
-
-var jane = new Adult("Jane Doe", "red");
-jane.payTaxes();
-jane.greet();
+var mobileMenu = new _modules_MobileMenu__WEBPACK_IMPORTED_MODULE_0__["default"]();
 
 /***/ }),
 
-/***/ "./app/assets/js/modules/Person.js":
-/*!*****************************************!*\
-  !*** ./app/assets/js/modules/Person.js ***!
-  \*****************************************/
+/***/ "./app/assets/js/modules/MobileMenu.js":
+/*!*********************************************!*\
+  !*** ./app/assets/js/modules/MobileMenu.js ***!
+  \*********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-class Person {
-  constructor(fullName, favColor) {
-    this.name = fullName;
-    this.favColor = favColor;
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+
+
+class MobileMenu {
+  constructor() {
+    this.menuIcon = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.site-header__menu-icon');
+    this.menuContent = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.site-header__menu-content');
+    this.siteHeader = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.site-header');
+    this.events();
   }
 
-  greet() {
-    console.log("Hi, my name is " + this.name + " and my favourite color is " + this.favColor);
+  events() {
+    this.menuIcon.click(this.toggleTheMenu.bind(this));
+  }
+
+  toggleTheMenu() {
+    this.menuContent.toggleClass('site-header__menu-content--is-visible');
+    this.siteHeader.toggleClass('site-header--is-expanded');
+    this.menuIcon.toggleClass('site-header__menu-icon--close-x');
   }
 
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (Person);
+/* harmony default export */ __webpack_exports__["default"] = (MobileMenu);
 
 /***/ }),
 

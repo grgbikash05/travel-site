@@ -2,6 +2,7 @@ import MobileMenu from './modules/MobileMenu';
 import RevealOnScroll from './modules/RevealOnScroll';
 import StickyHeader from './modules/StickyHeader';
 import Modal from './modules/Modal';
+import 'lazysizes';
 import $ from 'jquery';
 
 var mobileMenu = new MobileMenu();
